@@ -1,0 +1,7 @@
+% linux networking
+
+# get all listening ports (TCP & UDP)
+netstat -a
+
+
+

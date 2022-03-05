@@ -1,0 +1,4 @@
+% kafka
+
+# list topics (running in docker)
+docker exec -it broker sh -c "/usr/bin/kafka-topics --bootstrap-server localhost:9092 --list"
