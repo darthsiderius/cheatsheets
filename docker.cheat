@@ -1,7 +1,7 @@
 % docker
 
 ;;;;;;;;;;;;;;;;;;;;
-% docker logging
+% docker::logging
 ;;;;;
 # show live logs for container
 docker logs <container_id> --follow
@@ -10,24 +10,22 @@ docker logs <container_id> --follow
 docker logs <container_id> --tail <recent_lines>
 
 # Logging: show logs for recent duration
-# Ex: 5m, 100s
+; Ex: 5m, 100s
 docker logs <container_id> --until=<duration>
 
 ;;;;;;;;;;;;;;;;;;;;
-% docker removal
+% docker::removal
 ;;;;
-# Stop all containers
-docker stop 'docker ps -qa'
 
-# Remove all containers
-docker rm 'docker ps -qa'
+# Remove all running containers ( force stop & remove )
+docker rm -f $(docker ps -aq)
 
-# Remove all images
-docker rmi -f 'docker imaes -qa'
+# Remove all local images
+docker rmi -f 'docker images -qa'
 
 
 ;;;;;;;;;;;;;;;;;;;;
-% docker list
+% docker::list
 ;;;;
 
 # List all running containers

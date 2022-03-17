@@ -1,7 +1,10 @@
-% kafka
-
+% kafka 
 # list topics (running in docker)
 docker exec -it <kafka_container_id> sh -c "/usr/bin/kafka-topics --bootstrap-server localhost:9092 --list"
 
+
 # list records in a topic (running in docker)
 docker exec -it <kafka_container_id> sh -c "/usr/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
+
+
+$ kafka_container_id: docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}" --- --column 1 --header-lines 1 
